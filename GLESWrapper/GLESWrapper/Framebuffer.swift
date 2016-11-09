@@ -52,6 +52,10 @@ public class Framebuffer: Object, Usable {
         try super.init(name: framebufferName)
     }
     
+    deinit {
+        glDeleteFramebuffers(1, &name)
+    }
+    
     // MARK: - Usable protocol
     
     public func use() {

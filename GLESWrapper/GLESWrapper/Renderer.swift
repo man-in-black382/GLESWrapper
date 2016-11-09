@@ -6,6 +6,8 @@
 //  Copyright © 2016 MPO. All rights reserved.
 //
 
+import GLKit
+
 public enum DrawPattern {
     case triangles
     case triangleStrip
@@ -36,9 +38,9 @@ public class Renderer<VertexType: Vertex> {
         self.drawPattern = drawPattern
     }
     
-    // MARK: - Public
+    // MARK: - Private
     
-    public func render(withConfiguration configuration: ((VertexArray<VertexType>, Program) -> Void)?) {
+    private func render(withConfiguration configuration: ((VertexArray<VertexType>, Program) -> Void)?) {
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT))
         vertexArray.use()
         program.use()
@@ -48,7 +50,14 @@ public class Renderer<VertexType: Vertex> {
         glDrawElements(drawPattern.glRepresentation, GLsizei(vertexArray.vertices.count), GLenum(GL_UNSIGNED_SHORT), nil);
     }
     
-    public func renderOffscreen(configuration: ((VertexArray<VertexType>, Program) -> Void)?, framebuffer: Framebuffer) {
+    // MARK: - Public
+    
+    public func renderOnScreen(glkView: GLKView, configuration: ((VertexArray<VertexType>, Program) -> Void)?) {
+        glkView.bindDrawable()
+        render(withConfiguration: configuration)
+    }
+    
+    public func renderOffscreen(framebuffer: Framebuffer, configuration: ((VertexArray<VertexType>, Program) -> Void)?) {
         framebuffer.use()
         let drawBuffers = framebuffer.colorAttachments.map { (colorAttachment, object) -> GLenum in
             return colorAttachment.glRepresentation

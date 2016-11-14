@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE6628981DD5F36300A970E2 /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6628971DD5F36300A970E2 /* Sizeable.swift */; };
+		CE66289A1DD6003F00A970E2 /* VertexAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6628991DD6003F00A970E2 /* VertexAttribute.swift */; };
+		CE66289C1DD6005F00A970E2 /* Usable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66289B1DD6005F00A970E2 /* Usable.swift */; };
+		CE66289E1DD61CD600A970E2 /* RenderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66289D1DD61CD600A970E2 /* RenderConfiguration.swift */; };
 		CE9A10771DD1D79200C9D5AF /* GLESWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A106D1DD1D79200C9D5AF /* GLESWrapper.framework */; };
 		CE9A107C1DD1D79200C9D5AF /* GLESWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A107B1DD1D79200C9D5AF /* GLESWrapperTests.swift */; };
 		CE9A107E1DD1D79200C9D5AF /* GLESWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9A10701DD1D79200C9D5AF /* GLESWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -15,7 +19,6 @@
 		CE9A10941DD1D7CE00C9D5AF /* Framebuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10891DD1D7CE00C9D5AF /* Framebuffer.swift */; };
 		CE9A10951DD1D7CE00C9D5AF /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108A1DD1D7CE00C9D5AF /* Object.swift */; };
 		CE9A10961DD1D7CE00C9D5AF /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108B1DD1D7CE00C9D5AF /* Program.swift */; };
-		CE9A10971DD1D7CE00C9D5AF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108C1DD1D7CE00C9D5AF /* Protocols.swift */; };
 		CE9A10981DD1D7CE00C9D5AF /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108D1DD1D7CE00C9D5AF /* Renderer.swift */; };
 		CE9A10991DD1D7CE00C9D5AF /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108E1DD1D7CE00C9D5AF /* Shader.swift */; };
 		CE9A109A1DD1D7CE00C9D5AF /* Texture2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108F1DD1D7CE00C9D5AF /* Texture2D.swift */; };
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE6628971DD5F36300A970E2 /* Sizeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
+		CE6628991DD6003F00A970E2 /* VertexAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexAttribute.swift; sourceTree = "<group>"; };
+		CE66289B1DD6005F00A970E2 /* Usable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usable.swift; sourceTree = "<group>"; };
+		CE66289D1DD61CD600A970E2 /* RenderConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderConfiguration.swift; sourceTree = "<group>"; };
 		CE9A106D1DD1D79200C9D5AF /* GLESWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GLESWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9A10701DD1D79200C9D5AF /* GLESWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLESWrapper.h; sourceTree = "<group>"; };
 		CE9A10711DD1D79200C9D5AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,7 +54,6 @@
 		CE9A10891DD1D7CE00C9D5AF /* Framebuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Framebuffer.swift; sourceTree = "<group>"; };
 		CE9A108A1DD1D7CE00C9D5AF /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		CE9A108B1DD1D7CE00C9D5AF /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
-		CE9A108C1DD1D7CE00C9D5AF /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		CE9A108D1DD1D7CE00C9D5AF /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		CE9A108E1DD1D7CE00C9D5AF /* Shader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
 		CE9A108F1DD1D7CE00C9D5AF /* Texture2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture2D.swift; sourceTree = "<group>"; };
@@ -102,9 +108,12 @@
 				CE9A10891DD1D7CE00C9D5AF /* Framebuffer.swift */,
 				CE9A108A1DD1D7CE00C9D5AF /* Object.swift */,
 				CE9A108B1DD1D7CE00C9D5AF /* Program.swift */,
-				CE9A108C1DD1D7CE00C9D5AF /* Protocols.swift */,
+				CE66289D1DD61CD600A970E2 /* RenderConfiguration.swift */,
 				CE9A108D1DD1D7CE00C9D5AF /* Renderer.swift */,
 				CE9A108E1DD1D7CE00C9D5AF /* Shader.swift */,
+				CE66289B1DD6005F00A970E2 /* Usable.swift */,
+				CE6628991DD6003F00A970E2 /* VertexAttribute.swift */,
+				CE6628971DD5F36300A970E2 /* Sizeable.swift */,
 				CE9A10E41DD1F3B500C9D5AF /* Texture.swift */,
 				CE9A108F1DD1D7CE00C9D5AF /* Texture2D.swift */,
 				CE9A10E21DD1E92700C9D5AF /* Texture2DArray.swift */,
@@ -239,13 +248,16 @@
 				CE9A10961DD1D7CE00C9D5AF /* Program.swift in Sources */,
 				CE9A10921DD1D7CE00C9D5AF /* Converter.swift in Sources */,
 				CE9A10981DD1D7CE00C9D5AF /* Renderer.swift in Sources */,
+				CE66289C1DD6005F00A970E2 /* Usable.swift in Sources */,
 				CE9A109B1DD1D7CE00C9D5AF /* Vertex.swift in Sources */,
+				CE66289A1DD6003F00A970E2 /* VertexAttribute.swift in Sources */,
 				CE9A10941DD1D7CE00C9D5AF /* Framebuffer.swift in Sources */,
 				CE9A10E31DD1E92700C9D5AF /* Texture2DArray.swift in Sources */,
-				CE9A10971DD1D7CE00C9D5AF /* Protocols.swift in Sources */,
+				CE6628981DD5F36300A970E2 /* Sizeable.swift in Sources */,
 				CE9A10951DD1D7CE00C9D5AF /* Object.swift in Sources */,
 				CE9A10991DD1D7CE00C9D5AF /* Shader.swift in Sources */,
 				CE9A109A1DD1D7CE00C9D5AF /* Texture2D.swift in Sources */,
+				CE66289E1DD61CD600A970E2 /* RenderConfiguration.swift in Sources */,
 				CE9A109C1DD1D7CE00C9D5AF /* VertexArray.swift in Sources */,
 				CE9A10E51DD1F3B500C9D5AF /* Texture.swift in Sources */,
 				CE9A10931DD1D7CE00C9D5AF /* Extensions.swift in Sources */,

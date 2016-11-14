@@ -30,4 +30,10 @@ internal class Converter {
         return CGRect(x: rect.origin.x / scale, y: rect.origin.y / scale,
                       width: rect.size.width / scale, height: rect.size.height / scale)
     }
+    
+    internal static func inverted(rect: CGRect, relativeTo size: CGSize) -> CGRect {
+        var rect = rect
+        rect.origin.y = size.height - rect.size.height - rect.origin.y
+        return rect
+    }
 }

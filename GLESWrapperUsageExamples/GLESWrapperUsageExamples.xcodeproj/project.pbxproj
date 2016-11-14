@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE511E851DD46D22004275D5 /* ShadowMapRenderer.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CE511E831DD46D22004275D5 /* ShadowMapRenderer.fsh */; };
+		CE511E861DD46D22004275D5 /* ShadowMapRenderer.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CE511E841DD46D22004275D5 /* ShadowMapRenderer.vsh */; };
+		CE5945101DD3620900742582 /* LightingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59450F1DD3620900742582 /* LightingViewController.swift */; };
+		CE6628951DD5CEE000A970E2 /* LightRenderer.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CE6628931DD5CEE000A970E2 /* LightRenderer.fsh */; };
+		CE6628961DD5CEE000A970E2 /* LightRenderer.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CE6628941DD5CEE000A970E2 /* LightRenderer.vsh */; };
 		CE9A10C71DD1D9DC00C9D5AF /* GLESWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A10C61DD1D9DC00C9D5AF /* GLESWrapper.framework */; };
 		CE9A10C81DD1D9DC00C9D5AF /* GLESWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A10C61DD1D9DC00C9D5AF /* GLESWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CE9A10CD1DD1DB0100C9D5AF /* FragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CE9A10CB1DD1DB0100C9D5AF /* FragmentShader.fsh */; };
-		CE9A10CE1DD1DB0100C9D5AF /* VertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CE9A10CC1DD1DB0100C9D5AF /* VertexShader.vsh */; };
-		CE9A10D21DD1DB3700C9D5AF /* LightingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10D11DD1DB3700C9D5AF /* LightingViewController.swift */; };
 		CE9A10DC1DD1DB6500C9D5AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10D41DD1DB6500C9D5AF /* AppDelegate.swift */; };
 		CE9A10DE1DD1DB6500C9D5AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9A10D71DD1DB6500C9D5AF /* Assets.xcassets */; };
 		CE9A10DF1DD1DB6500C9D5AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9A10D81DD1DB6500C9D5AF /* LaunchScreen.storyboard */; };
 		CE9A10E01DD1DB6500C9D5AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9A10DA1DD1DB6500C9D5AF /* Main.storyboard */; };
+		CEA390271DD367F30078ABCB /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA390261DD367F30078ABCB /* LightView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,16 +36,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE511E831DD46D22004275D5 /* ShadowMapRenderer.fsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ShadowMapRenderer.fsh; sourceTree = "<group>"; };
+		CE511E841DD46D22004275D5 /* ShadowMapRenderer.vsh */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = ShadowMapRenderer.vsh; sourceTree = "<group>"; };
+		CE59450F1DD3620900742582 /* LightingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LightingViewController.swift; path = "Scenes/Lighting Scene/LightingViewController.swift"; sourceTree = "<group>"; };
+		CE6628931DD5CEE000A970E2 /* LightRenderer.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = LightRenderer.fsh; sourceTree = "<group>"; };
+		CE6628941DD5CEE000A970E2 /* LightRenderer.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = LightRenderer.vsh; sourceTree = "<group>"; };
 		CE9A10A61DD1D82F00C9D5AF /* GLESWrapperUsageExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLESWrapperUsageExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9A10C61DD1D9DC00C9D5AF /* GLESWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GLESWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE9A10CB1DD1DB0100C9D5AF /* FragmentShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = FragmentShader.fsh; sourceTree = "<group>"; };
-		CE9A10CC1DD1DB0100C9D5AF /* VertexShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = VertexShader.vsh; sourceTree = "<group>"; };
-		CE9A10D11DD1DB3700C9D5AF /* LightingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingViewController.swift; sourceTree = "<group>"; };
 		CE9A10D41DD1DB6500C9D5AF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9A10D51DD1DB6500C9D5AF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9A10D71DD1DB6500C9D5AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE9A10D91DD1DB6500C9D5AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE9A10DB1DD1DB6500C9D5AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEA390261DD367F30078ABCB /* LightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LightView.swift; path = "Scenes/Lighting Scene/LightView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE511E821DD46D22004275D5 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				CE511E841DD46D22004275D5 /* ShadowMapRenderer.vsh */,
+				CE511E831DD46D22004275D5 /* ShadowMapRenderer.fsh */,
+				CE6628931DD5CEE000A970E2 /* LightRenderer.fsh */,
+				CE6628941DD5CEE000A970E2 /* LightRenderer.vsh */,
+			);
+			name = Shaders;
+			path = "Scenes/Lighting Scene/Shaders";
+			sourceTree = "<group>";
+		};
+		CE59450D1DD361D100742582 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CE59450E1DD361D800742582 /* Lighting Scene */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		CE59450E1DD361D800742582 /* Lighting Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CE511E821DD46D22004275D5 /* Shaders */,
+				CE59450F1DD3620900742582 /* LightingViewController.swift */,
+				CEA390261DD367F30078ABCB /* LightView.swift */,
+			);
+			name = "Lighting Scene";
+			sourceTree = "<group>";
+		};
 		CE9A109D1DD1D82E00C9D5AF = {
 			isa = PBXGroup;
 			children = (
@@ -76,38 +112,12 @@
 		CE9A10A81DD1D82F00C9D5AF /* GLESWrapperUsageExamples */ = {
 			isa = PBXGroup;
 			children = (
+				CE59450D1DD361D100742582 /* Scenes */,
 				CE9A10E11DD1DB6900C9D5AF /* Frameworks */,
 				CE9A10D31DD1DB6500C9D5AF /* Other */,
 				CE9A10D61DD1DB6500C9D5AF /* Resources */,
-				CE9A10CF1DD1DB2400C9D5AF /* MVC */,
-				CE9A10CA1DD1DB0100C9D5AF /* Shaders */,
 			);
 			path = GLESWrapperUsageExamples;
-			sourceTree = "<group>";
-		};
-		CE9A10CA1DD1DB0100C9D5AF /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				CE9A10CB1DD1DB0100C9D5AF /* FragmentShader.fsh */,
-				CE9A10CC1DD1DB0100C9D5AF /* VertexShader.vsh */,
-			);
-			path = Shaders;
-			sourceTree = "<group>";
-		};
-		CE9A10CF1DD1DB2400C9D5AF /* MVC */ = {
-			isa = PBXGroup;
-			children = (
-				CE9A10D01DD1DB2400C9D5AF /* Controllers */,
-			);
-			path = MVC;
-			sourceTree = "<group>";
-		};
-		CE9A10D01DD1DB2400C9D5AF /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CE9A10D11DD1DB3700C9D5AF /* LightingViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CE9A10D31DD1DB6500C9D5AF /* Other */ = {
@@ -123,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				CE9A10D71DD1DB6500C9D5AF /* Assets.xcassets */,
-				CE9A10D81DD1DB6500C9D5AF /* LaunchScreen.storyboard */,
 				CE9A10DA1DD1DB6500C9D5AF /* Main.storyboard */,
+				CE9A10D81DD1DB6500C9D5AF /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -199,11 +209,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9A10CD1DD1DB0100C9D5AF /* FragmentShader.fsh in Resources */,
-				CE9A10CE1DD1DB0100C9D5AF /* VertexShader.vsh in Resources */,
+				CE511E851DD46D22004275D5 /* ShadowMapRenderer.fsh in Resources */,
+				CE6628951DD5CEE000A970E2 /* LightRenderer.fsh in Resources */,
+				CE511E861DD46D22004275D5 /* ShadowMapRenderer.vsh in Resources */,
 				CE9A10DE1DD1DB6500C9D5AF /* Assets.xcassets in Resources */,
 				CE9A10E01DD1DB6500C9D5AF /* Main.storyboard in Resources */,
 				CE9A10DF1DD1DB6500C9D5AF /* LaunchScreen.storyboard in Resources */,
+				CE6628961DD5CEE000A970E2 /* LightRenderer.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,8 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5945101DD3620900742582 /* LightingViewController.swift in Sources */,
+				CEA390271DD367F30078ABCB /* LightView.swift in Sources */,
 				CE9A10DC1DD1DB6500C9D5AF /* AppDelegate.swift in Sources */,
-				CE9A10D21DD1DB3700C9D5AF /* LightingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,18 +38,22 @@ public enum ColorAttachment {
     }
 }
 
-public class Framebuffer: Object, Usable {
+public class Framebuffer: Object, Usable, Sizeable {
     
     // MARK: - Properties
     
+    private(set) public var size: CGSize = .zero
     internal var colorAttachments = [ColorAttachment: Sizeable]()
     
     // MARK: - Lifecycle
     
-    public init() throws {
+    public init(size: CGSize) throws {
         var framebufferName: GLuint = 0
         glGenFramebuffers(1, &framebufferName)
         try super.init(name: framebufferName)
+        
+        try validate(size: size)
+        self.size = size
     }
     
     deinit {
@@ -60,6 +64,10 @@ public class Framebuffer: Object, Usable {
     
     public func use() {
         glBindFramebuffer(GLenum(GL_FRAMEBUFFER), name)
+        let drawBuffers = colorAttachments.map { (colorAttachment, object) -> GLenum in
+            return colorAttachment.glRepresentation
+        }
+        glDrawBuffers(GLsizei(drawBuffers.count), drawBuffers);
     }
     
     // MARK: - Public
@@ -85,9 +93,10 @@ public class Framebuffer: Object, Usable {
             throw FramebufferError.missingAttachment(details: "Attemp to copy to \(destinationAttachment), which doesn't have anything attached to it")
         }
         
-        sourceRectInPixels.origin.y = Converter.pixels(from: sourceAttachedObject.size).height - sourceRectInPixels.size.height
+        // Invert Y origin
+        sourceRectInPixels = Converter.inverted(rect: sourceRectInPixels, relativeTo: Converter.pixels(from: sourceAttachedObject.size))
         let destinationRectInPixels = Converter.pixels(from: destinationRect)
-        
+                
         glBlitFramebuffer(GLint(sourceRectInPixels.minX), GLint(sourceRectInPixels.minY),
                           GLint(sourceRectInPixels.maxX), GLint(sourceRectInPixels.maxY),
                           GLint(destinationRectInPixels.minX), GLint(destinationRectInPixels.minY),
@@ -95,9 +104,21 @@ public class Framebuffer: Object, Usable {
                           GLbitfield(GL_COLOR_BUFFER_BIT), GLenum(GL_LINEAR))
     }
     
-    public func attach(texture: Texture2D, to colorAttachment: ColorAttachment) {
+    public func attach(texture: Texture2D, to colorAttachment: ColorAttachment) throws {
+        if texture.size.width != size.width || texture.size.height != size.height {
+            throw SizeError.invalidSize(details: "Attempt to attach a texture the size of which (w: \(texture.size.width), h: \(texture.size.width)) doesn't match the framebuffer's size (w: \(size.width), h: \(size.width))")
+        }
         colorAttachments[colorAttachment] = texture
         use()
         glFramebufferTexture2D(GLenum(GL_FRAMEBUFFER), colorAttachment.glRepresentation, GLenum(GL_TEXTURE_2D), texture.name, 0)
+    }
+    
+    public func attach(layer: Int, of texture2DArray: Texture2DArray, to colorAttachment: ColorAttachment) throws {
+        if texture2DArray.size.width != size.width || texture2DArray.size.height != size.height {
+            throw SizeError.invalidSize(details: "Attempt to attach a texture array the size of which (w: \(texture2DArray.size.width), h: \(texture2DArray.size.width)) doesn't match the framebuffer's size (w: \(size.width), h: \(size.width))")
+        }
+        colorAttachments[colorAttachment] = texture2DArray
+        use()
+        glFramebufferTextureLayer(GLenum(GL_FRAMEBUFFER), colorAttachment.glRepresentation, texture2DArray.name, 0, GLint(layer))
     }
 }

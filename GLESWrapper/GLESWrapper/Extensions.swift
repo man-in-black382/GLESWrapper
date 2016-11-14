@@ -80,3 +80,15 @@ extension GLKVector4: VertexAttribute {
         return 4
     }
 }
+
+extension UIView: Sizeable {
+    var size: CGSize {
+        return bounds.size
+    }
+}
+
+extension GLKView: Usable {
+    func use() {
+        bindDrawable()
+    }
+}

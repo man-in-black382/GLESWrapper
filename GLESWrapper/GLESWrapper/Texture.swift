@@ -6,23 +6,12 @@
 //  Copyright © 2016 MPO. All rights reserved.
 //
 
-public enum TextureError: Error {
-    case invalidSize(details: String)
-}
-
 internal protocol Texture {
-    func validate(size: CGSize) throws
     func enableNPOTSupport()
     func bitmapContextWith(size: CGSize, scale: CGFloat) -> CGContext?
 }
 
 internal extension Texture {
-    func validate(size: CGSize) throws {
-        if size.width == 0 || size.height == 0 {
-            throw TextureError.invalidSize(details: "Size cannot have dimensions of 0")
-        }
-    }
-    
     func bitmapContextWith(size: CGSize, scale: CGFloat) -> CGContext? {
         let BitsPerComponent = 8
         let ColorSizeInMemory = 4

@@ -11,13 +11,21 @@ import GLKit
 public enum ProgramError: Error {
     case unableToLink(details: String)
     case nonexistentUniform
+    case tooManyUniformTextures
 }
 
 public class Program: Object, Usable {
     
     // MARK - Properties
     
-    private var uniforms: [String: Int32] = [:]
+    private static var availableTextureUnits: [Int32] = {
+        var maximumTextureUnits: GLint = 0
+        glGetIntegerv(GLenum(GL_MAX_TEXTURE_IMAGE_UNITS), &maximumTextureUnits);
+        return [Int32](0..<maximumTextureUnits)
+    }()
+    
+    private var usedTextureUnits = Set<Int32>()
+    private var uniforms = [String: Int32]()
     private let vertexShader: Shader
     private let fragmentShader: Shader
     
@@ -83,6 +91,17 @@ public class Program: Object, Usable {
         })
     }
     
+    private func modifyUniform<TextureType: Object where TextureType: Usable>(named name: String, withGeneric texture: TextureType) throws {
+        guard let uniformLocation = uniforms[name] else { throw ProgramError.nonexistentUniform }
+        let nonUsedTextureUnits = usedTextureUnits.symmetricDifference(Program.availableTextureUnits)
+        guard let textureUnit = nonUsedTextureUnits.first else { throw ProgramError.tooManyUniformTextures }
+        usedTextureUnits.insert(textureUnit)
+
+        glActiveTexture(GLenum(GL_TEXTURE0 + textureUnit))
+        texture.use()
+        glUniform1i(uniformLocation, 0);
+    }
+    
     // MARK: - Usable protocol
     
     public func use() {
@@ -91,9 +110,21 @@ public class Program: Object, Usable {
     
     // MARK: - Public
     
+    public func prepareForRendering() {
+        usedTextureUnits.removeAll()
+    }
+    
     public func modifyUniform(named name: String, with texture: Texture2D) throws {
+        try modifyUniform(named: name, withGeneric: texture)
+    }
+    
+    public func modifyUniform(named name: String, with texture: Texture2DArray) throws {
+        try modifyUniform(named: name, withGeneric: texture)
+    }
+    
+    public func modifyUniform(named name: String, with value: Int) throws {
         guard let uniformLocation = uniforms[name] else { throw ProgramError.nonexistentUniform }
-        glUniform1i(uniformLocation, GLint(texture.name));
+        glUniform1i(uniformLocation, GLint(value));
     }
     
     public func modifyUniform(named name: String, with value: Float) throws {
@@ -104,21 +135,18 @@ public class Program: Object, Usable {
     public func modifyUniform(named name: String, with vector: GLKVector2) throws {
         guard let uniformLocation = uniforms[name] else { throw ProgramError.nonexistentUniform }
         var vector = vector
-        let pointer = withUnsafePointer(to: &vector, { UnsafeRawPointer($0).assumingMemoryBound(to: GLfloat.self) })
-        glUniform2fv(uniformLocation, 2, pointer)
+        glUniform2fv(uniformLocation, 1, vector.decomposed)
     }
     
     public func modifyUniform(named name: String, with vector: GLKVector3) throws {
         guard let uniformLocation = uniforms[name] else { throw ProgramError.nonexistentUniform }
         var vector = vector
-        let pointer = withUnsafePointer(to: &vector, { UnsafeRawPointer($0).assumingMemoryBound(to: GLfloat.self) })
-        glUniform3fv(uniformLocation, 3, pointer)
+        glUniform3fv(uniformLocation, 1, vector.decomposed)
     }
     
     public func modifyUniform(named name: String, with vector: GLKVector4) throws {
         guard let uniformLocation = uniforms[name] else { throw ProgramError.nonexistentUniform }
         var vector = vector
-        let pointer = withUnsafePointer(to: &vector, { UnsafeRawPointer($0).assumingMemoryBound(to: GLfloat.self) })
-        glUniform4fv(uniformLocation, 4, pointer)
+        glUniform4fv(uniformLocation, 1, vector.decomposed)
     }
 }

@@ -22,6 +22,24 @@ public class Texture2DArray: Object, Texture, Usable, Sizeable {
         var name: GLuint = 0
         glGenTextures(1, &name);
         try super.init(name: name)
+        
+        use()
+        enableNPOTSupport()
+    }
+    
+    public convenience init(sizeInPixels: CGSize, capacity: UInt) throws {
+        try self.init()
+        
+        self.capacity = capacity
+        size = Converter.points(from: sizeInPixels)
+        try validate(size: size)
+        
+        glTexStorage3D(GLenum(GL_TEXTURE_2D_ARRAY),
+                       1, // No mipmaps (1 means that there is only one base image level)
+            GLenum(GL_RGBA8), // Internal format
+            GLsizei(sizeInPixels.width), // Width
+            GLsizei(sizeInPixels.height), // Height
+            GLsizei(capacity)) // Number of layers (elements, textures) in the array
     }
     
     public convenience init(size: CGSize, capacity: UInt) throws {
@@ -62,7 +80,7 @@ public class Texture2DArray: Object, Texture, Usable, Sizeable {
     
     public func updateTexture(at index: UInt, withContentsOf view: UIView) throws {
         if view.bounds.size.width != size.width || view.bounds.size.height != size.height {
-            throw TextureError.invalidSize(details: "Attempt to update texture in the texture array with a view the size of which (w: \(view.bounds.size.width), h: \(view.bounds.size.width)) doesn't match acceptable size (w: \(size.width), h: \(size.width))")
+            throw SizeError.invalidSize(details: "Attempt to update texture in the texture array with a view the size of which (w: \(view.bounds.size.width), h: \(view.bounds.size.width)) doesn't match acceptable size (w: \(size.width), h: \(size.width))")
         }
         
         if index >= capacity {

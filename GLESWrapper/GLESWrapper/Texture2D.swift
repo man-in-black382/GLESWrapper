@@ -19,6 +19,17 @@ public class Texture2D: Object, Texture, Usable, Sizeable {
         var name: GLuint = 0
         glGenTextures(1, &name);
         try super.init(name: name)
+        
+        use()
+        enableNPOTSupport()
+    }
+    
+    public convenience init(sizeInPixels: CGSize) throws {
+        try self.init()
+        size = Converter.points(from: sizeInPixels)
+        try validate(size: size)
+        
+        glTexStorage2D(GLenum(GL_TEXTURE_2D), 1, GLenum(GL_RGBA8), GLsizei(sizeInPixels.width), GLsizei(sizeInPixels.height))
     }
     
     public convenience init(size: CGSize) throws {
@@ -26,14 +37,9 @@ public class Texture2D: Object, Texture, Usable, Sizeable {
         try validate(size: size)
         
         self.size = size
-        
-        use()
-        enableNPOTSupport()
-        
+
         let realSize = Converter.pixels(from: size)
-        glTexImage2D(GLenum(GL_TEXTURE_2D), 0, GL_RGBA,
-                     GLsizei(realSize.width), GLsizei(realSize.height), 0,
-                     GLenum(GL_RGBA), GLenum(GL_UNSIGNED_BYTE), nil);
+        glTexStorage2D(GLenum(GL_TEXTURE_2D), 1, GLenum(GL_RGBA8), GLsizei(realSize.width), GLsizei(realSize.height))
     }
     
     deinit {
@@ -59,7 +65,7 @@ public class Texture2D: Object, Texture, Usable, Sizeable {
     
     public func update(withContentsOf view: UIView) throws {
         if view.bounds.size.width != size.width || view.bounds.size.height != size.height {
-            throw TextureError.invalidSize(details: "Attempt to update texture with a view the size of which (w: \(view.bounds.size.width), h: \(view.bounds.size.width)) exceeds acceptable size (w: \(size.width), h: \(size.width))")
+            throw SizeError.invalidSize(details: "Attempt to update texture with a view the size of which (w: \(view.bounds.size.width), h: \(view.bounds.size.width)) exceeds acceptable size (w: \(size.width), h: \(size.width))")
         }
         
         let realSize = Converter.pixels(from: view.bounds.size)
@@ -67,19 +73,22 @@ public class Texture2D: Object, Texture, Usable, Sizeable {
         if bitmapContext == nil {
             bitmapContext = bitmapContextWith(size: realSize, scale: UIScreen.main.scale)
         }
-        
+    
         guard let context = bitmapContext else {
             return
         }
         
-        view.layer.render(in: context)
         use()
         
         glEnable(GLenum(GL_BLEND));
         glBlendFunc(GLenum(GL_SRC_ALPHA), GLenum(GL_ONE_MINUS_SRC_ALPHA));
+        
+        view.layer.render(in: context)
 
-        glTexSubImage2D(GLenum(GL_TEXTURE_2D), 0, GL_RGBA,
-                        GLsizei(realSize.width), GLsizei(realSize.height), 0,
-                        GLenum(GL_RGBA), GLenum(GL_UNSIGNED_BYTE), context.data)
+        glTexSubImage2D(GLenum(GL_TEXTURE_2D),
+                        0, // Mipmap level
+                        0, 0, // Origin x, y
+                        GLsizei(realSize.width), GLsizei(realSize.height), // Width, height
+                        GLenum(GL_RGBA), GLenum(GL_UNSIGNED_BYTE), context.data) // Format, type, pixel data
     }
 }

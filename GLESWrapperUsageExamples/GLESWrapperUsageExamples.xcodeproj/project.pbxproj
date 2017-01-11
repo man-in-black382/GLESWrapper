@@ -19,6 +19,7 @@
 		CE9A10DF1DD1DB6500C9D5AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9A10D81DD1DB6500C9D5AF /* LaunchScreen.storyboard */; };
 		CE9A10E01DD1DB6500C9D5AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9A10DA1DD1DB6500C9D5AF /* Main.storyboard */; };
 		CEA390271DD367F30078ABCB /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA390261DD367F30078ABCB /* LightView.swift */; };
+		CEEFC11C1DD9F5B300639D2D /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEFC11B1DD9F5B300639D2D /* StudyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		CE9A10D91DD1DB6500C9D5AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE9A10DB1DD1DB6500C9D5AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEA390261DD367F30078ABCB /* LightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LightView.swift; path = "Scenes/Lighting Scene/LightView.swift"; sourceTree = "<group>"; };
+		CEEFC11B1DD9F5B300639D2D /* StudyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StudyViewController.swift; path = "Scenes/Study Scene/StudyViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		CE59450D1DD361D100742582 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CEEFC1191DD9F58200639D2D /* Study Scene */,
 				CE59450E1DD361D800742582 /* Lighting Scene */,
 			);
 			name = Scenes;
@@ -146,6 +149,14 @@
 			);
 			name = Frameworks;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		CEEFC1191DD9F58200639D2D /* Study Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CEEFC11B1DD9F5B300639D2D /* StudyViewController.swift */,
+			);
+			name = "Study Scene";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEEFC11C1DD9F5B300639D2D /* StudyViewController.swift in Sources */,
 				CE5945101DD3620900742582 /* LightingViewController.swift in Sources */,
 				CEA390271DD367F30078ABCB /* LightView.swift in Sources */,
 				CE9A10DC1DD1DB6500C9D5AF /* AppDelegate.swift in Sources */,

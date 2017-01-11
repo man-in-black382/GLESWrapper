@@ -61,7 +61,6 @@ class LightingViewController: GLKViewController {
     }
     
     func setupRenderPipelineObjects() {
-        
         let bottomLeftCorner = Vertex(attributes:
             [GLKVector4(v: (-1, -1, 0, 1)), // Vertex coordinate
             GLKVector2(v: (0, 0))]) // Occluders sample texture (specific for corresponding light) coordinates
@@ -118,24 +117,25 @@ class LightingViewController: GLKViewController {
                                   to: occluderSamplesFramebuffer, attachment: .attachment0, rectangle: bounds)
         }
         
-        shadowMapRenderer.render(to: shadowMapFramebuffer, configuration: { [weak self] (configuration) in
+        shadowMapRenderer.render(to: view, configuration: { [weak self] (configuration) in
+            configuration.viewport = CGRect(x: 0, y: 0, width: 200, height: 10)
             configuration.buffersToClear = [.color]
             try! configuration.program.modifyUniform(named: "u_occlusionMapsCount", with: Float(self!.lights.count))
             try! configuration.program.modifyUniform(named: "u_shadowMapSize", with: Float(self!.lightRaysCount))
             try! configuration.program.modifyUniform(named: "u_occlusionMaps", with: self!.occluderSamplesTextureArray)
         })
         
-        lightsRenderer.render(to: view, numberOfPasses: lights.count, configuration: { (configuration) in
-            configuration.buffersToClear = [.color]
-            glEnable(GLenum(GL_BLEND));
-            glBlendFunc(GLenum(GL_SRC_ALPHA), GLenum(GL_ONE));
-        }, singlePassConfiguration: { [weak self] (pass, configuration) in
-            let light = self!.lights[pass]
-            configuration.viewport = self!.lightFrame(for: light)
-            try! configuration.program.modifyUniform(named: "u_shadowMapTexture", with: self!.shadowMapTexture)
-            try! configuration.program.modifyUniform(named: "u_shadowMapSize", with: GLKVector2(v: (Float(self!.lightRaysCount), Float(self!.lights.count))))
-            try! configuration.program.modifyUniform(named: "u_lightIndex", with: Float(pass))
-            try! configuration.program.modifyUniform(named: "u_lightColor", with: light.glLightColor)
-        })
+//        lightsRenderer.render(to: view, numberOfPasses: lights.count, configuration: { (configuration) in
+//            configuration.buffersToClear = [.color]
+//            glEnable(GLenum(GL_BLEND));
+//            glBlendFunc(GLenum(GL_SRC_ALPHA), GLenum(GL_ONE));
+//        }, singlePassConfiguration: { [weak self] (pass, configuration) in
+//            let light = self!.lights[pass]
+//            configuration.viewport = self!.lightFrame(for: light)
+//            try! configuration.program.modifyUniform(named: "u_shadowMapTexture", with: self!.shadowMapTexture)
+//            try! configuration.program.modifyUniform(named: "u_shadowMapSize", with: GLKVector2(v: (Float(self!.lightRaysCount), Float(self!.lights.count))))
+//            try! configuration.program.modifyUniform(named: "u_lightIndex", with: Float(pass))
+//            try! configuration.program.modifyUniform(named: "u_lightColor", with: light.glLightColor)
+//        })
     }
 }

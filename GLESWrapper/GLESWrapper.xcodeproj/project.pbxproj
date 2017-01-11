@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE29A6B61E1E98E3001CC626 /* Quaternion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE29A6B51E1E98E3001CC626 /* Quaternion.swift */; };
 		CE6628981DD5F36300A970E2 /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6628971DD5F36300A970E2 /* Sizeable.swift */; };
 		CE66289A1DD6003F00A970E2 /* VertexAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6628991DD6003F00A970E2 /* VertexAttribute.swift */; };
 		CE66289C1DD6005F00A970E2 /* Usable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66289B1DD6005F00A970E2 /* Usable.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE29A6B51E1E98E3001CC626 /* Quaternion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quaternion.swift; path = Math/Quaternion.swift; sourceTree = "<group>"; };
 		CE6628971DD5F36300A970E2 /* Sizeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
 		CE6628991DD6003F00A970E2 /* VertexAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexAttribute.swift; sourceTree = "<group>"; };
 		CE66289B1DD6005F00A970E2 /* Usable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usable.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE29A6B21E1E984C001CC626 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				CE29A6B51E1E98E3001CC626 /* Quaternion.swift */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
 		CE9A10631DD1D79200C9D5AF = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		CE9A106F1DD1D79200C9D5AF /* GLESWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				CE29A6B21E1E984C001CC626 /* Math */,
 				CE9A10871DD1D7CE00C9D5AF /* Converter.swift */,
 				CE9A10881DD1D7CE00C9D5AF /* Extensions.swift */,
 				CE9A10891DD1D7CE00C9D5AF /* Framebuffer.swift */,
@@ -254,6 +265,7 @@
 				CE9A10941DD1D7CE00C9D5AF /* Framebuffer.swift in Sources */,
 				CE9A10E31DD1E92700C9D5AF /* Texture2DArray.swift in Sources */,
 				CE6628981DD5F36300A970E2 /* Sizeable.swift in Sources */,
+				CE29A6B61E1E98E3001CC626 /* Quaternion.swift in Sources */,
 				CE9A10951DD1D7CE00C9D5AF /* Object.swift in Sources */,
 				CE9A10991DD1D7CE00C9D5AF /* Shader.swift in Sources */,
 				CE9A109A1DD1D7CE00C9D5AF /* Texture2D.swift in Sources */,

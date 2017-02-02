@@ -110,6 +110,7 @@ public class Framebuffer: Object, Usable, Sizeable {
         }
         colorAttachments[colorAttachment] = texture
         use()
+        texture.use()
         glFramebufferTexture2D(GLenum(GL_FRAMEBUFFER), colorAttachment.glRepresentation, GLenum(GL_TEXTURE_2D), texture.name, 0)
     }
     
@@ -119,6 +120,7 @@ public class Framebuffer: Object, Usable, Sizeable {
         }
         colorAttachments[colorAttachment] = texture2DArray
         use()
+        texture2DArray.use()
         glFramebufferTextureLayer(GLenum(GL_FRAMEBUFFER), colorAttachment.glRepresentation, texture2DArray.name, 0, GLint(layer))
     }
 }

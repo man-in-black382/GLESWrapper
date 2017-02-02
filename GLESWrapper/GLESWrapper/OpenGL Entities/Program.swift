@@ -98,8 +98,8 @@ public class Program: Object, Usable {
         usedTextureUnits.insert(textureUnit)
 
         glActiveTexture(GLenum(GL_TEXTURE0 + textureUnit))
+        glUniform1i(uniformLocation, textureUnit);
         texture.use()
-        glUniform1i(uniformLocation, 0);
     }
     
     // MARK: - Usable protocol
@@ -135,18 +135,18 @@ public class Program: Object, Usable {
     public func modifyUniform(named name: String, with vector: GLKVector2) throws {
         guard let uniformLocation = uniforms[name] else { throw ProgramError.nonexistentUniform }
         var vector = vector
-        glUniform2fv(uniformLocation, 1, vector.decomposed)
+        glUniform2fv(uniformLocation, 1, vector.primitiveSequence)
     }
     
     public func modifyUniform(named name: String, with vector: GLKVector3) throws {
         guard let uniformLocation = uniforms[name] else { throw ProgramError.nonexistentUniform }
         var vector = vector
-        glUniform3fv(uniformLocation, 1, vector.decomposed)
+        glUniform3fv(uniformLocation, 1, vector.primitiveSequence)
     }
     
     public func modifyUniform(named name: String, with vector: GLKVector4) throws {
         guard let uniformLocation = uniforms[name] else { throw ProgramError.nonexistentUniform }
         var vector = vector
-        glUniform4fv(uniformLocation, 1, vector.decomposed)
+        glUniform4fv(uniformLocation, 1, vector.primitiveSequence)
     }
 }

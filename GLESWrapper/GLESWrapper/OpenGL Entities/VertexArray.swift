@@ -18,6 +18,7 @@ public class VertexArray<VertexType: Vertex>: Object, Usable {
     // MARK - Properties
     
     internal var vertices: [VertexType]
+    internal var indices: [GLushort]
     private let vertexDataBuffer: GLuint
     private let vertexIndicesBuffer: GLuint
     
@@ -46,19 +47,18 @@ public class VertexArray<VertexType: Vertex>: Object, Usable {
         // Init buffers
         
         self.vertices = vertices
-        let decomposedVertices = vertices.flatMap{ $0.decomposedAttributes }
-        let verticesMemorySize = vertices.reduce(0, { $0 + $1.memorySize })
+        self.indices = indices
         
-        glBufferData(GLenum(GL_ARRAY_BUFFER), verticesMemorySize, decomposedVertices, GLenum(GL_DYNAMIC_DRAW))
+        let verticesPrimitiveSequence = vertices.flatMap({ $0.primitiveSequence })
+        
+        glBufferData(GLenum(GL_ARRAY_BUFFER), MemoryLayout<GLfloat>.size * verticesPrimitiveSequence.count, verticesPrimitiveSequence, GLenum(GL_DYNAMIC_DRAW))
         glBufferData(GLenum(GL_ELEMENT_ARRAY_BUFFER), MemoryLayout<GLushort>.size * indices.count, indices, GLenum(GL_STATIC_DRAW))
         
-        if let vertex = vertices.first {
-            var offset = 0
-            for (location, attribute) in vertex.attributes.enumerated() {
-                glEnableVertexAttribArray(GLuint(location));
-                glVertexAttribPointer(GLuint(location), GLint(attribute.numberOfComponents), GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(vertex.memorySize), UnsafeRawPointer(bitPattern: offset));
-                offset += attribute.memorySize
-            }
+        var offset = 0
+        for layout in VertexType.attributeLayouts {
+            glEnableVertexAttribArray(GLuint(layout.location));
+            glVertexAttribPointer(GLuint(layout.location), GLint(layout.memorySize / MemoryLayout<GLfloat>.size), GLenum(GL_FLOAT), GLboolean(GL_FALSE), GLsizei(VertexType.memorySize), UnsafeRawPointer(bitPattern: offset));
+            offset += layout.memorySize
         }
         
         try super.init(name: arrayName)
@@ -86,8 +86,8 @@ public class VertexArray<VertexType: Vertex>: Object, Usable {
         
         self.vertices.replaceSubrange(range, with: vertices)
         let vertex = vertices.first!
-        glBufferSubData(GLenum(GL_ARRAY_BUFFER), range.lowerBound * vertex.memorySize,
-                        range.count * vertex.memorySize, vertices.flatMap { $0.decomposedAttributes })
+//        glBufferSubData(GLenum(GL_ARRAY_BUFFER), range.lowerBound * vertex.memorySize,
+//                        range.count * vertex.memorySize, vertices.flatMap { $0.decomposed })
     }
     
     // MARK - Usable protocol

@@ -85,7 +85,7 @@ public class Renderer<VertexType: Vertex> {
         }
         
         prepareForRendering(to: target, with: singlePassRenderConfiguration)
-        glDrawElements(drawPattern.glRepresentation, GLsizei(vertexArray.vertices.count), GLenum(GL_UNSIGNED_SHORT), nil);
+        glDrawElements(drawPattern.glRepresentation, GLsizei(vertexArray.indices.count), GLenum(GL_UNSIGNED_SHORT), nil);
     }
     
     /// Designated method for a multi-pass rendering

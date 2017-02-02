@@ -23,11 +23,11 @@ void main()
     vec2 norm = v_texCoord.st * 2.0 - 1.0;
     float theta = atan(norm.y, norm.x);
     
-    /* directional light */
-    //    if (theta < -0.7 || theta > 0.3) {
-    //     gl_FragColor = vec4(0,0,0,0);
-    //     return;
-    //     }
+//    /* directional light */
+//    if (theta < -PI / 2.0 || theta > PI / 2.0) {
+//        o_fragColor = vec4(0.0, 0.0, 0.0, 0.0);
+//        return;
+//    }
     
     float r = length(norm);
     float coord = (-theta + PI) / (2.0 * PI);

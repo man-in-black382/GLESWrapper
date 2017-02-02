@@ -7,25 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE6628981DD5F36300A970E2 /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6628971DD5F36300A970E2 /* Sizeable.swift */; };
-		CE66289A1DD6003F00A970E2 /* VertexAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6628991DD6003F00A970E2 /* VertexAttribute.swift */; };
-		CE66289C1DD6005F00A970E2 /* Usable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66289B1DD6005F00A970E2 /* Usable.swift */; };
-		CE66289E1DD61CD600A970E2 /* RenderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66289D1DD61CD600A970E2 /* RenderConfiguration.swift */; };
+		CE1E71AF1E3E888B00823D2D /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E71AE1E3E888B00823D2D /* Vertex.swift */; };
+		CE25DCFB1E421A4A009C1019 /* WavefrontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF51E421A4A009C1019 /* WavefrontLoader.swift */; };
+		CE25DCFC1E421A4A009C1019 /* WavefrontMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF61E421A4A009C1019 /* WavefrontMaterial.swift */; };
+		CE25DCFD1E421A4A009C1019 /* WavefrontMaterialLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF71E421A4A009C1019 /* WavefrontMaterialLoader.swift */; };
+		CE25DCFE1E421A4A009C1019 /* WavefrontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF81E421A4A009C1019 /* WavefrontModel.swift */; };
+		CE25DCFF1E421A4A009C1019 /* WavefrontModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF91E421A4A009C1019 /* WavefrontModelLoader.swift */; };
+		CE25DD001E421A4A009C1019 /* WavefrontVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCFA1E421A4A009C1019 /* WavefrontVertex.swift */; };
+		CE25DD051E421A6E009C1019 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE25DD031E421A6E009C1019 /* Info.plist */; };
+		CE25DD061E421CDA009C1019 /* GLESWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE25DD021E421A6E009C1019 /* GLESWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE47D6021E38BBE300FE2FC5 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5EF1E38BBE300FE2FC5 /* Converter.swift */; };
+		CE47D6041E38BBE300FE2FC5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5F21E38BBE300FE2FC5 /* Extensions.swift */; };
+		CE47D6051E38BBE300FE2FC5 /* Framebuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5F31E38BBE300FE2FC5 /* Framebuffer.swift */; };
+		CE47D6061E38BBE300FE2FC5 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5F41E38BBE300FE2FC5 /* Object.swift */; };
+		CE47D6071E38BBE300FE2FC5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5F51E38BBE300FE2FC5 /* Program.swift */; };
+		CE47D6081E38BBE300FE2FC5 /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5F61E38BBE300FE2FC5 /* Shader.swift */; };
+		CE47D6091E38BBE300FE2FC5 /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5F71E38BBE300FE2FC5 /* Sizeable.swift */; };
+		CE47D60A1E38BBE300FE2FC5 /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5F81E38BBE300FE2FC5 /* Texture.swift */; };
+		CE47D60B1E38BBE300FE2FC5 /* Texture2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5F91E38BBE300FE2FC5 /* Texture2D.swift */; };
+		CE47D60C1E38BBE300FE2FC5 /* Texture2DArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5FA1E38BBE300FE2FC5 /* Texture2DArray.swift */; };
+		CE47D60D1E38BBE300FE2FC5 /* Usable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5FB1E38BBE300FE2FC5 /* Usable.swift */; };
+		CE47D60F1E38BBE300FE2FC5 /* VertexArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5FD1E38BBE300FE2FC5 /* VertexArray.swift */; };
+		CE47D6111E38BBE300FE2FC5 /* RenderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D6001E38BBE300FE2FC5 /* RenderConfiguration.swift */; };
+		CE47D6121E38BBE300FE2FC5 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D6011E38BBE300FE2FC5 /* Renderer.swift */; };
+		CE70375D1E3F47770084C12E /* VBOLayoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70375C1E3F47770084C12E /* VBOLayoutable.swift */; };
 		CE9A10771DD1D79200C9D5AF /* GLESWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A106D1DD1D79200C9D5AF /* GLESWrapper.framework */; };
 		CE9A107C1DD1D79200C9D5AF /* GLESWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A107B1DD1D79200C9D5AF /* GLESWrapperTests.swift */; };
-		CE9A107E1DD1D79200C9D5AF /* GLESWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9A10701DD1D79200C9D5AF /* GLESWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CE9A10921DD1D7CE00C9D5AF /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10871DD1D7CE00C9D5AF /* Converter.swift */; };
-		CE9A10931DD1D7CE00C9D5AF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10881DD1D7CE00C9D5AF /* Extensions.swift */; };
-		CE9A10941DD1D7CE00C9D5AF /* Framebuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10891DD1D7CE00C9D5AF /* Framebuffer.swift */; };
-		CE9A10951DD1D7CE00C9D5AF /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108A1DD1D7CE00C9D5AF /* Object.swift */; };
-		CE9A10961DD1D7CE00C9D5AF /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108B1DD1D7CE00C9D5AF /* Program.swift */; };
-		CE9A10981DD1D7CE00C9D5AF /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108D1DD1D7CE00C9D5AF /* Renderer.swift */; };
-		CE9A10991DD1D7CE00C9D5AF /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108E1DD1D7CE00C9D5AF /* Shader.swift */; };
-		CE9A109A1DD1D7CE00C9D5AF /* Texture2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A108F1DD1D7CE00C9D5AF /* Texture2D.swift */; };
-		CE9A109B1DD1D7CE00C9D5AF /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10901DD1D7CE00C9D5AF /* Vertex.swift */; };
-		CE9A109C1DD1D7CE00C9D5AF /* VertexArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10911DD1D7CE00C9D5AF /* VertexArray.swift */; };
-		CE9A10E31DD1E92700C9D5AF /* Texture2DArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10E21DD1E92700C9D5AF /* Texture2DArray.swift */; };
-		CE9A10E51DD1F3B500C9D5AF /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A10E41DD1F3B500C9D5AF /* Texture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,28 +46,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE6628971DD5F36300A970E2 /* Sizeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
-		CE6628991DD6003F00A970E2 /* VertexAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexAttribute.swift; sourceTree = "<group>"; };
-		CE66289B1DD6005F00A970E2 /* Usable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usable.swift; sourceTree = "<group>"; };
-		CE66289D1DD61CD600A970E2 /* RenderConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderConfiguration.swift; sourceTree = "<group>"; };
+		CE1E71AE1E3E888B00823D2D /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		CE25DCF51E421A4A009C1019 /* WavefrontLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontLoader.swift; path = "Model Loading/Wavefront/WavefrontLoader.swift"; sourceTree = "<group>"; };
+		CE25DCF61E421A4A009C1019 /* WavefrontMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontMaterial.swift; path = "Model Loading/Wavefront/WavefrontMaterial.swift"; sourceTree = "<group>"; };
+		CE25DCF71E421A4A009C1019 /* WavefrontMaterialLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontMaterialLoader.swift; path = "Model Loading/Wavefront/WavefrontMaterialLoader.swift"; sourceTree = "<group>"; };
+		CE25DCF81E421A4A009C1019 /* WavefrontModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontModel.swift; path = "Model Loading/Wavefront/WavefrontModel.swift"; sourceTree = "<group>"; };
+		CE25DCF91E421A4A009C1019 /* WavefrontModelLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontModelLoader.swift; path = "Model Loading/Wavefront/WavefrontModelLoader.swift"; sourceTree = "<group>"; };
+		CE25DCFA1E421A4A009C1019 /* WavefrontVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontVertex.swift; path = "Model Loading/Wavefront/WavefrontVertex.swift"; sourceTree = "<group>"; };
+		CE25DD021E421A6E009C1019 /* GLESWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESWrapper.h; sourceTree = "<group>"; };
+		CE25DD031E421A6E009C1019 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE47D5EF1E38BBE300FE2FC5 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		CE47D5F21E38BBE300FE2FC5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CE47D5F31E38BBE300FE2FC5 /* Framebuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Framebuffer.swift; sourceTree = "<group>"; };
+		CE47D5F41E38BBE300FE2FC5 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		CE47D5F51E38BBE300FE2FC5 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		CE47D5F61E38BBE300FE2FC5 /* Shader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
+		CE47D5F71E38BBE300FE2FC5 /* Sizeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
+		CE47D5F81E38BBE300FE2FC5 /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
+		CE47D5F91E38BBE300FE2FC5 /* Texture2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture2D.swift; sourceTree = "<group>"; };
+		CE47D5FA1E38BBE300FE2FC5 /* Texture2DArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture2DArray.swift; sourceTree = "<group>"; };
+		CE47D5FB1E38BBE300FE2FC5 /* Usable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usable.swift; sourceTree = "<group>"; };
+		CE47D5FD1E38BBE300FE2FC5 /* VertexArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexArray.swift; sourceTree = "<group>"; };
+		CE47D6001E38BBE300FE2FC5 /* RenderConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderConfiguration.swift; sourceTree = "<group>"; };
+		CE47D6011E38BBE300FE2FC5 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		CE70375C1E3F47770084C12E /* VBOLayoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBOLayoutable.swift; sourceTree = "<group>"; };
 		CE9A106D1DD1D79200C9D5AF /* GLESWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GLESWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE9A10701DD1D79200C9D5AF /* GLESWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLESWrapper.h; sourceTree = "<group>"; };
-		CE9A10711DD1D79200C9D5AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9A10761DD1D79200C9D5AF /* GLESWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLESWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9A107B1DD1D79200C9D5AF /* GLESWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLESWrapperTests.swift; sourceTree = "<group>"; };
 		CE9A107D1DD1D79200C9D5AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE9A10871DD1D7CE00C9D5AF /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
-		CE9A10881DD1D7CE00C9D5AF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		CE9A10891DD1D7CE00C9D5AF /* Framebuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Framebuffer.swift; sourceTree = "<group>"; };
-		CE9A108A1DD1D7CE00C9D5AF /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
-		CE9A108B1DD1D7CE00C9D5AF /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
-		CE9A108D1DD1D7CE00C9D5AF /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
-		CE9A108E1DD1D7CE00C9D5AF /* Shader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
-		CE9A108F1DD1D7CE00C9D5AF /* Texture2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture2D.swift; sourceTree = "<group>"; };
-		CE9A10901DD1D7CE00C9D5AF /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
-		CE9A10911DD1D7CE00C9D5AF /* VertexArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexArray.swift; sourceTree = "<group>"; };
-		CE9A10E21DD1E92700C9D5AF /* Texture2DArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture2DArray.swift; sourceTree = "<group>"; };
-		CE9A10E41DD1F3B500C9D5AF /* Texture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +95,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE25DCF31E421973009C1019 /* Model Loading */ = {
+			isa = PBXGroup;
+			children = (
+				CE25DCF41E421A0D009C1019 /* Wavefront */,
+			);
+			name = "Model Loading";
+			sourceTree = "<group>";
+		};
+		CE25DCF41E421A0D009C1019 /* Wavefront */ = {
+			isa = PBXGroup;
+			children = (
+				CE25DCF51E421A4A009C1019 /* WavefrontLoader.swift */,
+				CE25DCF91E421A4A009C1019 /* WavefrontModelLoader.swift */,
+				CE25DCF71E421A4A009C1019 /* WavefrontMaterialLoader.swift */,
+				CE25DCF81E421A4A009C1019 /* WavefrontModel.swift */,
+				CE25DCF61E421A4A009C1019 /* WavefrontMaterial.swift */,
+				CE25DCFA1E421A4A009C1019 /* WavefrontVertex.swift */,
+			);
+			name = Wavefront;
+			sourceTree = "<group>";
+		};
+		CE25DD011E421A6E009C1019 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CE25DD021E421A6E009C1019 /* GLESWrapper.h */,
+				CE25DD031E421A6E009C1019 /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		CE47D5EE1E38BBE300FE2FC5 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				CE47D5EF1E38BBE300FE2FC5 /* Converter.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		CE47D5F11E38BBE300FE2FC5 /* OpenGL Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE47D5F21E38BBE300FE2FC5 /* Extensions.swift */,
+				CE47D5F41E38BBE300FE2FC5 /* Object.swift */,
+				CE47D5FB1E38BBE300FE2FC5 /* Usable.swift */,
+				CE47D5F71E38BBE300FE2FC5 /* Sizeable.swift */,
+				CE70375C1E3F47770084C12E /* VBOLayoutable.swift */,
+				CE47D5F51E38BBE300FE2FC5 /* Program.swift */,
+				CE47D5F61E38BBE300FE2FC5 /* Shader.swift */,
+				CE1E71AE1E3E888B00823D2D /* Vertex.swift */,
+				CE47D5FD1E38BBE300FE2FC5 /* VertexArray.swift */,
+				CE47D5F81E38BBE300FE2FC5 /* Texture.swift */,
+				CE47D5F91E38BBE300FE2FC5 /* Texture2D.swift */,
+				CE47D5FA1E38BBE300FE2FC5 /* Texture2DArray.swift */,
+				CE47D5F31E38BBE300FE2FC5 /* Framebuffer.swift */,
+			);
+			path = "OpenGL Entities";
+			sourceTree = "<group>";
+		};
+		CE47D5FF1E38BBE300FE2FC5 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				CE47D6001E38BBE300FE2FC5 /* RenderConfiguration.swift */,
+				CE47D6011E38BBE300FE2FC5 /* Renderer.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
 		CE9A10631DD1D79200C9D5AF = {
 			isa = PBXGroup;
 			children = (
@@ -103,24 +183,11 @@
 		CE9A106F1DD1D79200C9D5AF /* GLESWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				CE9A10871DD1D7CE00C9D5AF /* Converter.swift */,
-				CE9A10881DD1D7CE00C9D5AF /* Extensions.swift */,
-				CE9A10891DD1D7CE00C9D5AF /* Framebuffer.swift */,
-				CE9A108A1DD1D7CE00C9D5AF /* Object.swift */,
-				CE9A108B1DD1D7CE00C9D5AF /* Program.swift */,
-				CE66289D1DD61CD600A970E2 /* RenderConfiguration.swift */,
-				CE9A108D1DD1D7CE00C9D5AF /* Renderer.swift */,
-				CE9A108E1DD1D7CE00C9D5AF /* Shader.swift */,
-				CE66289B1DD6005F00A970E2 /* Usable.swift */,
-				CE6628991DD6003F00A970E2 /* VertexAttribute.swift */,
-				CE6628971DD5F36300A970E2 /* Sizeable.swift */,
-				CE9A10E41DD1F3B500C9D5AF /* Texture.swift */,
-				CE9A108F1DD1D7CE00C9D5AF /* Texture2D.swift */,
-				CE9A10E21DD1E92700C9D5AF /* Texture2DArray.swift */,
-				CE9A10901DD1D7CE00C9D5AF /* Vertex.swift */,
-				CE9A10911DD1D7CE00C9D5AF /* VertexArray.swift */,
-				CE9A10701DD1D79200C9D5AF /* GLESWrapper.h */,
-				CE9A10711DD1D79200C9D5AF /* Info.plist */,
+				CE47D5EE1E38BBE300FE2FC5 /* Math */,
+				CE47D5F11E38BBE300FE2FC5 /* OpenGL Entities */,
+				CE47D5FF1E38BBE300FE2FC5 /* Rendering */,
+				CE25DCF31E421973009C1019 /* Model Loading */,
+				CE25DD011E421A6E009C1019 /* Other */,
 			);
 			path = GLESWrapper;
 			sourceTree = "<group>";
@@ -141,7 +208,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9A107E1DD1D79200C9D5AF /* GLESWrapper.h in Headers */,
+				CE25DD061E421CDA009C1019 /* GLESWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +263,7 @@
 				TargetAttributes = {
 					CE9A106C1DD1D79200C9D5AF = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					CE9A10751DD1D79200C9D5AF = {
@@ -228,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE25DD051E421A6E009C1019 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,22 +313,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9A10961DD1D7CE00C9D5AF /* Program.swift in Sources */,
-				CE9A10921DD1D7CE00C9D5AF /* Converter.swift in Sources */,
-				CE9A10981DD1D7CE00C9D5AF /* Renderer.swift in Sources */,
-				CE66289C1DD6005F00A970E2 /* Usable.swift in Sources */,
-				CE9A109B1DD1D7CE00C9D5AF /* Vertex.swift in Sources */,
-				CE66289A1DD6003F00A970E2 /* VertexAttribute.swift in Sources */,
-				CE9A10941DD1D7CE00C9D5AF /* Framebuffer.swift in Sources */,
-				CE9A10E31DD1E92700C9D5AF /* Texture2DArray.swift in Sources */,
-				CE6628981DD5F36300A970E2 /* Sizeable.swift in Sources */,
-				CE9A10951DD1D7CE00C9D5AF /* Object.swift in Sources */,
-				CE9A10991DD1D7CE00C9D5AF /* Shader.swift in Sources */,
-				CE9A109A1DD1D7CE00C9D5AF /* Texture2D.swift in Sources */,
-				CE66289E1DD61CD600A970E2 /* RenderConfiguration.swift in Sources */,
-				CE9A109C1DD1D7CE00C9D5AF /* VertexArray.swift in Sources */,
-				CE9A10E51DD1F3B500C9D5AF /* Texture.swift in Sources */,
-				CE9A10931DD1D7CE00C9D5AF /* Extensions.swift in Sources */,
+				CE47D6091E38BBE300FE2FC5 /* Sizeable.swift in Sources */,
+				CE47D6081E38BBE300FE2FC5 /* Shader.swift in Sources */,
+				CE47D60C1E38BBE300FE2FC5 /* Texture2DArray.swift in Sources */,
+				CE25DCFD1E421A4A009C1019 /* WavefrontMaterialLoader.swift in Sources */,
+				CE25DCFE1E421A4A009C1019 /* WavefrontModel.swift in Sources */,
+				CE25DCFF1E421A4A009C1019 /* WavefrontModelLoader.swift in Sources */,
+				CE25DD001E421A4A009C1019 /* WavefrontVertex.swift in Sources */,
+				CE25DCFC1E421A4A009C1019 /* WavefrontMaterial.swift in Sources */,
+				CE47D6061E38BBE300FE2FC5 /* Object.swift in Sources */,
+				CE47D60B1E38BBE300FE2FC5 /* Texture2D.swift in Sources */,
+				CE47D60F1E38BBE300FE2FC5 /* VertexArray.swift in Sources */,
+				CE25DCFB1E421A4A009C1019 /* WavefrontLoader.swift in Sources */,
+				CE47D6071E38BBE300FE2FC5 /* Program.swift in Sources */,
+				CE70375D1E3F47770084C12E /* VBOLayoutable.swift in Sources */,
+				CE47D6051E38BBE300FE2FC5 /* Framebuffer.swift in Sources */,
+				CE47D6041E38BBE300FE2FC5 /* Extensions.swift in Sources */,
+				CE47D6111E38BBE300FE2FC5 /* RenderConfiguration.swift in Sources */,
+				CE1E71AF1E3E888B00823D2D /* Vertex.swift in Sources */,
+				CE47D60A1E38BBE300FE2FC5 /* Texture.swift in Sources */,
+				CE47D6121E38BBE300FE2FC5 /* Renderer.swift in Sources */,
+				CE47D6021E38BBE300FE2FC5 /* Converter.swift in Sources */,
+				CE47D60D1E38BBE300FE2FC5 /* Usable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +465,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = GLESWrapper/Info.plist;
+				INFOPLIST_FILE = GLESWrapper/Other/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -412,7 +486,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = GLESWrapper/Info.plist;
+				INFOPLIST_FILE = GLESWrapper/Other/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

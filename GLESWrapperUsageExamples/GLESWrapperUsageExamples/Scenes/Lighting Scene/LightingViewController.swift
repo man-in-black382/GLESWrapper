@@ -6,13 +6,14 @@
 //  Copyright © 2016 MPO. All rights reserved.
 //
 
-import UIKit
 import GLESWrapper
 import GLKit
 
 // MARK: - Lifecycle
 extension LightingViewController {
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         setupContext()
         setupRenderPipelineObjects()
         
@@ -34,13 +35,12 @@ class LightingViewController: GLKViewController {
     @IBOutlet var lights: [LightView]!
     @IBOutlet var obstacles: [UIImageView]!
     @IBOutlet weak var occludersContainerView: UIView!
-    @IBOutlet weak var testLabel: UILabel!
     
     // MARK - Render pipeline stuff
     let context = EAGLContext(api: .openGLES3)
     
-    var shadowMapRenderer: Renderer<Vertex>!
-    var lightsRenderer: Renderer<Vertex>!
+    var shadowMapRenderer: Renderer<FlatLightingVertex>!
+    var lightsRenderer: Renderer<FlatLightingVertex>!
     
     var occludersTexture: Texture2D!
     var occludersFramebuffer: Framebuffer!
@@ -61,13 +61,10 @@ class LightingViewController: GLKViewController {
     }
     
     func setupRenderPipelineObjects() {
-        
-        let bottomLeftCorner = Vertex(attributes:
-            [GLKVector4(v: (-1, -1, 0, 1)), // Vertex coordinate
-            GLKVector2(v: (0, 0))]) // Occluders sample texture (specific for corresponding light) coordinates
-        let topLeftCorner = Vertex(attributes: [GLKVector4(v: (-1, 1, 0, 1)), GLKVector2(v: (0, 1))])
-        let bottomRightCorner = Vertex(attributes: [GLKVector4(v: (1, -1, 0, 1)), GLKVector2(v: (1, 0))])
-        let topRightCorner = Vertex(attributes: [GLKVector4(v: (1, 1, 0, 1)), GLKVector2(v: (1, 1))])
+        let bottomLeftCorner = FlatLightingVertex(position: GLKVector4(v: (-1, -1, 0, 1)), textureCoordinates: GLKVector2(v: (0, 0)))
+        let topLeftCorner = FlatLightingVertex(position: GLKVector4(v: (-1, 1, 0, 1)), textureCoordinates: GLKVector2(v: (0, 1)))
+        let bottomRightCorner = FlatLightingVertex(position: GLKVector4(v: (1, -1, 0, 1)), textureCoordinates: GLKVector2(v: (1, 0)))
+        let topRightCorner = FlatLightingVertex(position: GLKVector4(v: (1, 1, 0, 1)), textureCoordinates: GLKVector2(v: (1, 1)))
         
         let vertexArray = try! VertexArray(vertices: [bottomLeftCorner, topLeftCorner, bottomRightCorner, topRightCorner], indices: [0, 1, 2, 3])
         

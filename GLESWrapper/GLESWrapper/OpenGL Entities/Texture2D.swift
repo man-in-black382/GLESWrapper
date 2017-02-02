@@ -70,21 +70,20 @@ public class Texture2D: Object, Texture, Usable, Sizeable {
         
         let realSize = Converter.pixels(from: view.bounds.size)
         
-        if bitmapContext == nil {
+        if let context = bitmapContext {
+            context.clear(CGRect(origin: .zero, size: CGSize(width: context.width, height: context.height)))
+        } else {
             bitmapContext = bitmapContextWith(size: realSize, scale: UIScreen.main.scale)
         }
-    
+
         guard let context = bitmapContext else {
             return
         }
         
         use()
         
-        glEnable(GLenum(GL_BLEND));
-        glBlendFunc(GLenum(GL_SRC_ALPHA), GLenum(GL_ONE_MINUS_SRC_ALPHA));
-        
         view.layer.render(in: context)
-
+        
         glTexSubImage2D(GLenum(GL_TEXTURE_2D),
                         0, // Mipmap level
                         0, 0, // Origin x, y

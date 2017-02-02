@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kES-Fd-AJK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dbr-0n-2nJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--GLKit View Controller-->
+        <scene sceneID="boa-jQ-4xp">
+            <objects>
+                <glkViewController preferredFramesPerSecond="30" id="dbr-0n-2nJ" customClass="PlaygroundViewController" customModule="GLESWrapperUsageExamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FGA-H2-oqT"/>
+                        <viewControllerLayoutGuide type="bottom" id="faz-N3-SRF"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="f4z-fX-HyZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="dbr-0n-2nJ" id="4bP-db-zVq"/>
+                        </connections>
+                    </glkView>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lj4-fg-pkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="63"/>
+        </scene>
         <!--GLKit View Controller-->
         <scene sceneID="T7E-AK-BPH">
             <objects>
@@ -77,6 +97,15 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LIght-Bulb_32" translatesAutoresizingMaskIntoConstraints="NO" id="l0H-Jd-kMN" userLabel="Green Light - LightView" customClass="LightView" customModule="GLESWrapperUsageExamples" customModuleProvider="target">
+                                        <rect key="frame" x="263" y="72" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lightColor">
+                                                <color key="value" red="0.72603643894798109" green="1" blue="0.73362315859530858" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -110,6 +139,7 @@
                         <outletCollection property="lights" destination="PgL-td-SbB" collectionClass="NSMutableArray" id="XA7-lG-LRO"/>
                         <outletCollection property="lights" destination="j99-Ya-SsP" collectionClass="NSMutableArray" id="Dht-3p-xgJ"/>
                         <outletCollection property="lights" destination="tCa-0h-1GG" collectionClass="NSMutableArray" id="XZV-Yl-jm5"/>
+                        <outletCollection property="lights" destination="l0H-Jd-kMN" collectionClass="NSMutableArray" id="YHg-jo-2yb"/>
                     </connections>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7N-LK-tT9" userLabel="First Responder" sceneMemberID="firstResponder"/>

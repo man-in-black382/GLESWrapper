@@ -8,8 +8,8 @@
 
 import Foundation
 
-public class WavefrontModel {
+public class WavefrontGroup {
     public var vertices = [WavefrontVertex]()
     public var indices = [GLushort]()
-    internal var material: WavefrontMaterial?
+    public var material: WavefrontMaterial?
 }

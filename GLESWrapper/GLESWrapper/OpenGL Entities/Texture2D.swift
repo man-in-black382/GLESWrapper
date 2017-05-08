@@ -6,6 +6,8 @@
 //  Copyright © 2016 MPO. All rights reserved.
 //
 
+import GLKit
+
 public class Texture2D: Object, Texture, Usable, Sizeable {
     
     // MARK: - Properties
@@ -40,6 +42,17 @@ public class Texture2D: Object, Texture, Usable, Sizeable {
 
         let realSize = Converter.pixels(from: size)
         glTexStorage2D(GLenum(GL_TEXTURE_2D), 1, GLenum(GL_RGBA8), GLsizei(realSize.width), GLsizei(realSize.height))
+    }
+    
+    public init(resourceName: String, bundle: Bundle = Bundle.main) throws {
+        guard let filePath = bundle.path(forResource: resourceName, ofType: nil) else {
+            throw ResourceLoadingError.fileNotFound(fileName: resourceName)
+        }
+        
+        let textureInfo = try GLKTextureLoader.texture(withContentsOfFile: filePath, options: nil)
+        try super.init(name: textureInfo.target)
+        size = CGSize(width: Int(textureInfo.width), height: Int(textureInfo.height))
+        try validate(size: size)
     }
     
     deinit {

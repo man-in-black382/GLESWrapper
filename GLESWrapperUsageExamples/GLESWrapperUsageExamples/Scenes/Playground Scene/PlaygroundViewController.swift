@@ -35,7 +35,7 @@ class PlaygroundViewController: GLKViewController {
     }
     
     func setupRenderPipelineObjects() {
-        let loader = try! WavefrontModelLoader(modelName: "spot")
+        let loader = try! WavefrontObjectLoader(modelName: "cube")
         let model = try! loader.loadModel()
         
         vertexArray = try! VertexArray(vertices: model.vertices, indices: model.indices)
@@ -44,6 +44,8 @@ class PlaygroundViewController: GLKViewController {
                                    fragmentShader: Shader(resourceName: "BlinnPhong.fsh", type: .fragment))
         
         renderer = Renderer(program: program, vertexArray: vertexArray, drawPattern: .triangles)
+
+        print("")
     }
     
     // MARK: - Rendering

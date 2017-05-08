@@ -13,6 +13,7 @@ public class WavefrontMaterial {
     public internal(set) var ambientColor: GLKVector3!
     public internal(set) var diffuseColor: GLKVector3!
     public internal(set) var specularColor: GLKVector3!
+    public internal(set) var emissiveColor: GLKVector3?
     public internal(set) var illuminationModel: WavefrontIlluminationModel!
     public internal(set) var opticalDensity: Float?
     public internal(set) var specularExponent: Float?

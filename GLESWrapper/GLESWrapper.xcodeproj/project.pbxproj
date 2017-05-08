@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		CE1E71AF1E3E888B00823D2D /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1E71AE1E3E888B00823D2D /* Vertex.swift */; };
-		CE25DCFB1E421A4A009C1019 /* WavefrontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF51E421A4A009C1019 /* WavefrontLoader.swift */; };
-		CE25DCFC1E421A4A009C1019 /* WavefrontMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF61E421A4A009C1019 /* WavefrontMaterial.swift */; };
-		CE25DCFD1E421A4A009C1019 /* WavefrontMaterialLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF71E421A4A009C1019 /* WavefrontMaterialLoader.swift */; };
-		CE25DCFE1E421A4A009C1019 /* WavefrontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF81E421A4A009C1019 /* WavefrontModel.swift */; };
-		CE25DCFF1E421A4A009C1019 /* WavefrontModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCF91E421A4A009C1019 /* WavefrontModelLoader.swift */; };
-		CE25DD001E421A4A009C1019 /* WavefrontVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25DCFA1E421A4A009C1019 /* WavefrontVertex.swift */; };
+		CE2177E71E48737E00A78677 /* WavefrontFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177DF1E48737E00A78677 /* WavefrontFileReader.swift */; };
+		CE2177E81E48737E00A78677 /* WavefrontGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177E01E48737E00A78677 /* WavefrontGeometryReader.swift */; };
+		CE2177E91E48737E00A78677 /* WavefrontMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177E11E48737E00A78677 /* WavefrontMaterial.swift */; };
+		CE2177EA1E48737E00A78677 /* WavefrontMaterialLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177E21E48737E00A78677 /* WavefrontMaterialLoader.swift */; };
+		CE2177EB1E48737E00A78677 /* WavefrontMaterialReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177E31E48737E00A78677 /* WavefrontMaterialReader.swift */; };
+		CE2177EC1E48737E00A78677 /* WavefrontGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177E41E48737E00A78677 /* WavefrontGroup.swift */; };
+		CE2177ED1E48737E00A78677 /* WavefrontModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177E51E48737E00A78677 /* WavefrontModelLoader.swift */; };
+		CE2177EE1E48737E00A78677 /* WavefrontVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177E61E48737E00A78677 /* WavefrontVertex.swift */; };
+		CE2177F01E48745600A78677 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177EF1E48745600A78677 /* Scene.swift */; };
+		CE2177F21E48894400A78677 /* WavefrontObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2177F11E48894400A78677 /* WavefrontObject.swift */; };
 		CE25DD051E421A6E009C1019 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE25DD031E421A6E009C1019 /* Info.plist */; };
 		CE25DD061E421CDA009C1019 /* GLESWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE25DD021E421A6E009C1019 /* GLESWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE47D6021E38BBE300FE2FC5 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47D5EF1E38BBE300FE2FC5 /* Converter.swift */; };
@@ -33,6 +37,7 @@
 		CE70375D1E3F47770084C12E /* VBOLayoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70375C1E3F47770084C12E /* VBOLayoutable.swift */; };
 		CE9A10771DD1D79200C9D5AF /* GLESWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9A106D1DD1D79200C9D5AF /* GLESWrapper.framework */; };
 		CE9A107C1DD1D79200C9D5AF /* GLESWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A107B1DD1D79200C9D5AF /* GLESWrapperTests.swift */; };
+		CEE60E461E44B373005A2EB5 /* ResourceLoadingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE60E451E44B373005A2EB5 /* ResourceLoadingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +52,16 @@
 
 /* Begin PBXFileReference section */
 		CE1E71AE1E3E888B00823D2D /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
-		CE25DCF51E421A4A009C1019 /* WavefrontLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontLoader.swift; path = "Model Loading/Wavefront/WavefrontLoader.swift"; sourceTree = "<group>"; };
-		CE25DCF61E421A4A009C1019 /* WavefrontMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontMaterial.swift; path = "Model Loading/Wavefront/WavefrontMaterial.swift"; sourceTree = "<group>"; };
-		CE25DCF71E421A4A009C1019 /* WavefrontMaterialLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontMaterialLoader.swift; path = "Model Loading/Wavefront/WavefrontMaterialLoader.swift"; sourceTree = "<group>"; };
-		CE25DCF81E421A4A009C1019 /* WavefrontModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontModel.swift; path = "Model Loading/Wavefront/WavefrontModel.swift"; sourceTree = "<group>"; };
-		CE25DCF91E421A4A009C1019 /* WavefrontModelLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontModelLoader.swift; path = "Model Loading/Wavefront/WavefrontModelLoader.swift"; sourceTree = "<group>"; };
-		CE25DCFA1E421A4A009C1019 /* WavefrontVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WavefrontVertex.swift; path = "Model Loading/Wavefront/WavefrontVertex.swift"; sourceTree = "<group>"; };
+		CE2177DF1E48737E00A78677 /* WavefrontFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontFileReader.swift; sourceTree = "<group>"; };
+		CE2177E01E48737E00A78677 /* WavefrontGeometryReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontGeometryReader.swift; sourceTree = "<group>"; };
+		CE2177E11E48737E00A78677 /* WavefrontMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontMaterial.swift; sourceTree = "<group>"; };
+		CE2177E21E48737E00A78677 /* WavefrontMaterialLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontMaterialLoader.swift; sourceTree = "<group>"; };
+		CE2177E31E48737E00A78677 /* WavefrontMaterialReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontMaterialReader.swift; sourceTree = "<group>"; };
+		CE2177E41E48737E00A78677 /* WavefrontGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontGroup.swift; sourceTree = "<group>"; };
+		CE2177E51E48737E00A78677 /* WavefrontModelLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontModelLoader.swift; sourceTree = "<group>"; };
+		CE2177E61E48737E00A78677 /* WavefrontVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontVertex.swift; sourceTree = "<group>"; };
+		CE2177EF1E48745600A78677 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		CE2177F11E48894400A78677 /* WavefrontObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WavefrontObject.swift; sourceTree = "<group>"; };
 		CE25DD021E421A6E009C1019 /* GLESWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESWrapper.h; sourceTree = "<group>"; };
 		CE25DD031E421A6E009C1019 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE47D5EF1E38BBE300FE2FC5 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
@@ -74,6 +83,7 @@
 		CE9A10761DD1D79200C9D5AF /* GLESWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLESWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9A107B1DD1D79200C9D5AF /* GLESWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLESWrapperTests.swift; sourceTree = "<group>"; };
 		CE9A107D1DD1D79200C9D5AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE60E451E44B373005A2EB5 /* ResourceLoadingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLoadingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,25 +105,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE25DCF31E421973009C1019 /* Model Loading */ = {
+		CE2177DD1E48737E00A78677 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
-				CE25DCF41E421A0D009C1019 /* Wavefront */,
+				CE2177EF1E48745600A78677 /* Scene.swift */,
+				CE2177DE1E48737E00A78677 /* Wavefront */,
 			);
-			name = "Model Loading";
+			path = Geometry;
 			sourceTree = "<group>";
 		};
-		CE25DCF41E421A0D009C1019 /* Wavefront */ = {
+		CE2177DE1E48737E00A78677 /* Wavefront */ = {
 			isa = PBXGroup;
 			children = (
-				CE25DCF51E421A4A009C1019 /* WavefrontLoader.swift */,
-				CE25DCF91E421A4A009C1019 /* WavefrontModelLoader.swift */,
-				CE25DCF71E421A4A009C1019 /* WavefrontMaterialLoader.swift */,
-				CE25DCF81E421A4A009C1019 /* WavefrontModel.swift */,
-				CE25DCF61E421A4A009C1019 /* WavefrontMaterial.swift */,
-				CE25DCFA1E421A4A009C1019 /* WavefrontVertex.swift */,
+				CE2177DF1E48737E00A78677 /* WavefrontFileReader.swift */,
+				CE2177E01E48737E00A78677 /* WavefrontGeometryReader.swift */,
+				CE2177E31E48737E00A78677 /* WavefrontMaterialReader.swift */,
+				CE2177E11E48737E00A78677 /* WavefrontMaterial.swift */,
+				CE2177E21E48737E00A78677 /* WavefrontMaterialLoader.swift */,
+				CE2177E41E48737E00A78677 /* WavefrontGroup.swift */,
+				CE2177F11E48894400A78677 /* WavefrontObject.swift */,
+				CE2177E51E48737E00A78677 /* WavefrontModelLoader.swift */,
+				CE2177E61E48737E00A78677 /* WavefrontVertex.swift */,
 			);
-			name = Wavefront;
+			path = Wavefront;
 			sourceTree = "<group>";
 		};
 		CE25DD011E421A6E009C1019 /* Other */ = {
@@ -121,6 +135,7 @@
 			children = (
 				CE25DD021E421A6E009C1019 /* GLESWrapper.h */,
 				CE25DD031E421A6E009C1019 /* Info.plist */,
+				CEE60E451E44B373005A2EB5 /* ResourceLoadingError.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -186,7 +201,7 @@
 				CE47D5EE1E38BBE300FE2FC5 /* Math */,
 				CE47D5F11E38BBE300FE2FC5 /* OpenGL Entities */,
 				CE47D5FF1E38BBE300FE2FC5 /* Rendering */,
-				CE25DCF31E421973009C1019 /* Model Loading */,
+				CE2177DD1E48737E00A78677 /* Geometry */,
 				CE25DD011E421A6E009C1019 /* Other */,
 			);
 			path = GLESWrapper;
@@ -316,23 +331,28 @@
 				CE47D6091E38BBE300FE2FC5 /* Sizeable.swift in Sources */,
 				CE47D6081E38BBE300FE2FC5 /* Shader.swift in Sources */,
 				CE47D60C1E38BBE300FE2FC5 /* Texture2DArray.swift in Sources */,
-				CE25DCFD1E421A4A009C1019 /* WavefrontMaterialLoader.swift in Sources */,
-				CE25DCFE1E421A4A009C1019 /* WavefrontModel.swift in Sources */,
-				CE25DCFF1E421A4A009C1019 /* WavefrontModelLoader.swift in Sources */,
-				CE25DD001E421A4A009C1019 /* WavefrontVertex.swift in Sources */,
-				CE25DCFC1E421A4A009C1019 /* WavefrontMaterial.swift in Sources */,
 				CE47D6061E38BBE300FE2FC5 /* Object.swift in Sources */,
+				CE2177F01E48745600A78677 /* Scene.swift in Sources */,
 				CE47D60B1E38BBE300FE2FC5 /* Texture2D.swift in Sources */,
 				CE47D60F1E38BBE300FE2FC5 /* VertexArray.swift in Sources */,
-				CE25DCFB1E421A4A009C1019 /* WavefrontLoader.swift in Sources */,
+				CE2177EC1E48737E00A78677 /* WavefrontGroup.swift in Sources */,
+				CE2177EA1E48737E00A78677 /* WavefrontMaterialLoader.swift in Sources */,
 				CE47D6071E38BBE300FE2FC5 /* Program.swift in Sources */,
+				CE2177EB1E48737E00A78677 /* WavefrontMaterialReader.swift in Sources */,
+				CE2177E71E48737E00A78677 /* WavefrontFileReader.swift in Sources */,
 				CE70375D1E3F47770084C12E /* VBOLayoutable.swift in Sources */,
+				CEE60E461E44B373005A2EB5 /* ResourceLoadingError.swift in Sources */,
 				CE47D6051E38BBE300FE2FC5 /* Framebuffer.swift in Sources */,
 				CE47D6041E38BBE300FE2FC5 /* Extensions.swift in Sources */,
+				CE2177EE1E48737E00A78677 /* WavefrontVertex.swift in Sources */,
 				CE47D6111E38BBE300FE2FC5 /* RenderConfiguration.swift in Sources */,
+				CE2177F21E48894400A78677 /* WavefrontObject.swift in Sources */,
+				CE2177E81E48737E00A78677 /* WavefrontGeometryReader.swift in Sources */,
+				CE2177ED1E48737E00A78677 /* WavefrontModelLoader.swift in Sources */,
 				CE1E71AF1E3E888B00823D2D /* Vertex.swift in Sources */,
 				CE47D60A1E38BBE300FE2FC5 /* Texture.swift in Sources */,
 				CE47D6121E38BBE300FE2FC5 /* Renderer.swift in Sources */,
+				CE2177E91E48737E00A78677 /* WavefrontMaterial.swift in Sources */,
 				CE47D6021E38BBE300FE2FC5 /* Converter.swift in Sources */,
 				CE47D60D1E38BBE300FE2FC5 /* Usable.swift in Sources */,
 			);

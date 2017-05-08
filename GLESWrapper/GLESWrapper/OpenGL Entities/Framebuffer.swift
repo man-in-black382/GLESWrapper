@@ -81,8 +81,6 @@ public class Framebuffer: Object, Usable, Sizeable {
         
         glBindFramebuffer(GLenum(GL_READ_FRAMEBUFFER), sourceFramebuffer.name)
         glBindFramebuffer(GLenum(GL_DRAW_FRAMEBUFFER), destinationFramebuffer.name)
-        glReadBuffer(sourceAttachment.glRepresentation)
-        glDrawBuffers(1, [destinationAttachment.glRepresentation])
         
         var sourceRectInPixels = Converter.pixels(from: sourceRect)
         // Invert origin Y
